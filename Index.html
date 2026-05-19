@@ -1,304 +1,263 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chinese Course Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chinese Course</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: "Prompt", sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body{
-      background:#f5f7fb;
-      color:#333;
-    }
-
-    header{
-      background: linear-gradient(135deg,#c40000,#ff4d4d);
+      background:#0f0f0f;
       color:white;
-      padding:60px 20px;
-      text-align:center;
     }
 
-    header h1{
-      font-size:48px;
-      margin-bottom:15px;
-    }
-
-    header p{
-      font-size:20px;
-      opacity:0.95;
-    }
-
-    nav{
-      background:white;
-      padding:15px;
-      text-align:center;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-
-    nav a{
-      text-decoration:none;
-      margin:0 15px;
-      color:#c40000;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    nav a:hover{
-      color:#ff4d4d;
-    }
+    /* HERO */
 
     .hero{
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+
+      background-size:cover;
+      background-position:center;
+
       display:flex;
       justify-content:center;
       align-items:center;
-      flex-wrap:wrap;
-      padding:60px 20px;
-      gap:40px;
-    }
 
-    .hero-text{
-      max-width:500px;
-    }
-
-    .hero-text h2{
-      font-size:38px;
-      margin-bottom:20px;
-      color:#c40000;
-    }
-
-    .hero-text p{
-      font-size:18px;
-      line-height:1.8;
-    }
-
-    .btn{
-      display:inline-block;
-      margin-top:25px;
-      padding:14px 30px;
-      background:#c40000;
-      color:white;
-      text-decoration:none;
-      border-radius:10px;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:#ff4d4d;
-      transform:translateY(-2px);
-    }
-
-    .hero img{
-      width:350px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    .courses{
-      padding:70px 20px;
       text-align:center;
-      background:white;
+      padding:20px;
     }
 
-    .courses h2{
-      font-size:40px;
-      margin-bottom:40px;
-      color:#c40000;
+    .hero-content h1{
+      font-size:70px;
+      margin-bottom:20px;
+      letter-spacing:3px;
     }
 
-    .course-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    .hero-content p{
+      font-size:20px;
+      opacity:.8;
+      margin-bottom:30px;
+    }
+
+    .hero-content a{
+      display:inline-block;
+      padding:14px 35px;
+
+      background:#d4af37;
+      color:black;
+
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+
+      transition:.3s;
+    }
+
+    .hero-content a:hover{
+      transform:scale(1.05);
+    }
+
+    /* TEAM */
+
+    .team{
+      padding:100px 20px;
+      text-align:center;
+    }
+
+    .team h2{
+      font-size:50px;
+      margin-bottom:50px;
+      letter-spacing:2px;
+    }
+
+    .team-container{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
       gap:30px;
-      max-width:1200px;
-      margin:auto;
     }
 
     .card{
-      background:#fff;
-      border-radius:20px;
-      padding:30px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
-      transition:0.3s;
+      width:260px;
+
+      padding:30px 20px;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(10px);
+
+      box-shadow:
+      0 8px 32px rgba(0,0,0,0.3);
+
+      transition:.4s;
     }
 
     .card:hover{
       transform:translateY(-10px);
     }
 
+    .card img{
+      width:120px;
+      height:120px;
+
+      border-radius:50%;
+      object-fit:cover;
+
+      margin-bottom:20px;
+    }
+
     .card h3{
-      color:#c40000;
-      margin-bottom:15px;
+      font-size:28px;
+      margin-bottom:10px;
     }
 
     .card p{
-      line-height:1.7;
+      opacity:.7;
+      margin-bottom:20px;
     }
 
-    .members{
-      padding:70px 20px;
-      background:#f5f7fb;
-      text-align:center;
-    }
-
-    .members h2{
-      font-size:40px;
-      color:#c40000;
-      margin-bottom:40px;
-    }
-
-    .member-box{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:30px;
-    }
-
-    .member{
-      background:white;
-      padding:30px;
-      width:320px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .member h3{
-      margin-bottom:15px;
-      color:#c40000;
-    }
-
-    .member a{
-      text-decoration:none;
-      color:white;
-      background:#c40000;
-      padding:12px 20px;
+    .card a{
       display:inline-block;
-      margin-top:15px;
-      border-radius:10px;
-      transition:0.3s;
+
+      padding:10px 25px;
+
+      background:#d4af37;
+      color:black;
+
+      text-decoration:none;
+      border-radius:30px;
+      font-weight:bold;
     }
 
-    .member a:hover{
-      background:#ff4d4d;
-    }
+    /* MOBILE */
 
-    footer{
-      background:#c40000;
-      color:white;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:45px;
+      }
+
+      .team h2{
+        font-size:35px;
+      }
+
     }
 
   </style>
-</head>
 
+</head>
 <body>
 
-  <header>
-    <h1>Chinese Course Academy</h1>
-    <p>เรียนภาษาจีนออนไลน์ พัฒนาทักษะ ฟัง พูด อ่าน เขียน</p>
-  </header>
+  <!-- HERO -->
 
-  <nav>
-    <a href="#home">หน้าแรก</a>
-    <a href="#courses">คอร์สเรียน</a>
-    <a href="#members">สมาชิก</a>
-  </nav>
+  <section class="hero">
 
-  <section class="hero" id="home">
+    <div class="hero-content">
 
-    <div class="hero-text">
-      <h2>เริ่มเรียนภาษาจีนกับเรา</h2>
+      <h1>Chinese Mastery</h1>
 
       <p>
-        เว็บไซต์สำหรับขายคอร์สเรียนภาษาจีนออนไลน์
-        เหมาะสำหรับผู้เริ่มต้นจนถึงระดับ HSK
-        พร้อมเทคนิคการจำคำศัพท์ การสนทนา
-        และการเตรียมสอบแบบเข้าใจง่าย
+        เรียนภาษาจีนแบบเข้าใจง่าย ใช้ได้จริง
       </p>
 
-      <a href="#courses" class="btn">ดูคอร์สเรียน</a>
-    </div>
-
-    <img src="">
-
-  </section>
-
-  <section class="courses" id="courses">
-
-    <h2>คอร์สยอดนิยม</h2>
-
-    <div class="course-grid">
-
-      <div class="card">
-        <h3>Chinese Beginner</h3>
-        <p>
-          เรียนพื้นฐานภาษาจีนตั้งแต่พินอิน
-          คำศัพท์ และบทสนทนาในชีวิตประจำวัน
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>HSK Preparation</h3>
-        <p>
-          เตรียมสอบ HSK พร้อมแนวข้อสอบจริง
-          เทคนิคจำศัพท์และการทำข้อสอบ
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Chinese Speaking</h3>
-        <p>
-          ฝึกพูดภาษาจีนกับสถานการณ์จริง
-          เพิ่มความมั่นใจในการสื่อสาร
-        </p>
-      </div>
+      <a href="#">
+        สมัครเรียน
+      </a>
 
     </div>
 
   </section>
 
-  <section class="members" id="members">
+  <!-- TEAM -->
 
-    <h2>สมาชิกผู้พัฒนาเว็บไซต์</h2>
+  <section class="team">
 
-    <div class="member-box">
+    <h2>Our Team</h2>
 
-      <div class="member">
-        <h3>สมาชิกคนที่ 1</h3>
-        <p>เว็บไซต์ Portfolio และผลงานส่วนตัว</p>
+    <div class="team-container">
 
-        <a href="ข้อความ.txt/" target="_blank">
-          เข้าชมเว็บไซต์
+      <!-- MEMBER 1 -->
+
+      <div class="card">
+
+        <img src="https://i.pravatar.cc/300?img=1">
+
+        <h3>อั๋น</h3>
+
+        <p>Frontend Developer</p>
+
+        <a href="https://github.com/" target="_blank">
+          GitHub
         </a>
+
       </div>
 
-      <div class="member">
-        <h3>สมาชิกคนที่ 2</h3>
-        <p>เว็บไซต์แนะนำตัวและข้อมูลส่วนตัว</p>
+      <!-- MEMBER 2 -->
 
-        <a href="" target="_blank">
-          เข้าชมเว็บไซต์
+      <div class="card">
+
+        <img src="https://i.pravatar.cc/300?img=2">
+
+        <h3>ปัด</h3>
+
+        <p>UI Designer</p>
+
+        <a href="https://github.com/" target="_blank">
+          GitHub
         </a>
+
+      </div>
+
+      <!-- MEMBER 3 -->
+
+      <div class="card">
+
+        <img src="https://i.pravatar.cc/300?img=3">
+
+        <h3>วัน</h3>
+
+        <p>Backend Developer</p>
+
+        <a href="https://github.com/" target="_blank">
+          GitHub
+        </a>
+
+      </div>
+
+      <!-- MEMBER 4 -->
+
+      <div class="card">
+
+        <img src="https://i.pravatar.cc/300?img=4">
+
+        <h3>ไอซ์</h3>
+
+        <p>Content Creator</p>
+
+        <a href="https://github.com/" target="_blank">
+          GitHub
+        </a>
+
       </div>
 
     </div>
 
   </section>
-
-  <footer>
-    <p>© 2026 Chinese Course Academy | เว็บไซต์สำหรับเรียนภาษาจีนออนไลน์</p>
-  </footer>
 
 </body>
-</html>
+</html>l>
